@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LocalStorage</title>
+</head>
+<body>
+
+<input type="text" id="textInput" placeholder="Enter something">
+<button id="saveBtn">Save</button>
+
+<p class="text"></p>
+
+<script>
+    const textInput = document.querySelector("#textInput");
+    const saveBtn = document.querySelector("#saveBtn");
+    const text = document.querySelector(".text");
+
+    function displayText() {
+        let textValue = textInput.value;
+        localStorage.setItem("name", textValue);
+        text.textContent = textValue;
+        
+    }
+
+    text.textContent = localStorage.getItem("name");
+
+    saveBtn.addEventListener("click", displayText);
+</script>
+
+</body>
+</html>
